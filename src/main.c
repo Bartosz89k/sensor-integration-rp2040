@@ -23,17 +23,10 @@ void led_red_task()
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
     while (true) {
-        if (temperature_value > temperature_threshold) {
-            gpio_put(LED_PIN, 1);
-            vTaskDelay(10);
-        }
-        else {
-
-            gpio_put(LED_PIN, 1);
-            vTaskDelay(10);
-            gpio_put(LED_PIN, 0);
-            vTaskDelay(10);
-        }
+        gpio_put(LED_PIN, 1);
+        vTaskDelay(10);
+        gpio_put(LED_PIN, 0);
+        vTaskDelay(10);
     }
 }
 
