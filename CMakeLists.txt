@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.12)
 
 # Name project
-SET(ProjectName rp2040-freertos-template)
+SET(ProjectName sensor-integration-rp2040) # change name !!!!!!11111111
 
 # Set any variables required for importing libraries
 SET(FREERTOS_KERNEL_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib/FreeRTOS-Kernel)
+#SET(OLED_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib/OLED)
 
 # Import those libraries
 include(pico_sdk_import.cmake)
@@ -18,6 +19,7 @@ pico_sdk_init()
 
 # Add subdirectories
 add_subdirectory(src)
+add_subdirectory(lib)
 
 # if you have anything in "lib" folder then uncomment below - remember to add a CMakeLists.txt
 # file to the "lib" directory
